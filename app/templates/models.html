@@ -1,0 +1,81 @@
+<head><title>Гиперпараметры</title></head>
+
+<style>
+  h1 {
+    background-color: #57B7E6;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+  
+    font-size: 20px;
+  }
+  h3 {
+    color: white;
+    padding: 10px 20px;
+    text-align: left;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+  
+    font-size: 15px;
+  }
+  .container {
+    background-color: #57B7E6;
+    color: white;
+    padding: 10px 20px;
+    text-align: left;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+  
+    font-size: 20px;
+  }
+
+
+  button {
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+  
+    font-size: 20px;  
+  }
+</style>
+
+{% extends "base.html" %}
+
+
+
+
+
+{% block title %} <h1>Настройка модели </h1>>{% endblock %}
+
+
+
+
+{% block content %}
+
+<h1>Выбор гиперпараметров для модели <u>{{ name }}</u>,</h1>
+<h3>Тип ансамбля — {{ ('случайный лес' if (model_type == 'RF')
+                      else 'градиентный бустинг')}}.</h3>
+
+<div class="container">
+    <i>Укажите гиперпараметры:</i>
+    <br>
+    {{ wtf.quick_form(form) }}
+</div>
+
+<br>
+
+<a href="{{ url_for('index') }}">
+  <button> 
+    Назад 
+  </button>
+</a>
+
+{% endblock %}

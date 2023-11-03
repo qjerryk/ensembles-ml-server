@@ -1,0 +1,39 @@
+<head><title>Добавить новую модель </title></head>
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<style>
+    h1 {
+      background-color: #57B7E6;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+    
+      font-size: 20px;
+    }
+    .container {
+    background-color: #57B7E6;
+    color: white;
+    padding: 10px 20px;
+    text-align: left;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+  
+    font-size: 20px;
+  }
+</style>
+ <centre>   
+<h1> Добавить новую модель </h1>
+
+<div class="container">
+      {{ wtf.quick_form(form) }}
+</div>
+
+{% endblock %}

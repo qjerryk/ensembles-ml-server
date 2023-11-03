@@ -1,0 +1,63 @@
+<style>
+      h1 {
+        background-color: #57B7E6;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 10px;
+      
+        font-size: 20px;
+      }
+      h3 {
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 10px;
+      
+        font-size: 15px;
+      }
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+
+      button {
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 10px;
+      
+        font-size: 20px;  
+      }
+    </style>
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3> Список моделей </h3>>
+
+{% for i in range(models |length) %}
+      <h3> Модель: {{models[i]}} </h3>
+      <img src="{{ url_for('static', filename='new_plot{}.png'.format(i)) }}" class="image" />
+{% endfor %}
+
+<br>
+
+<a href="{{ url_for('index') }}">
+      <button> 
+        Назад 
+      </button>
+</a>
+    
+{% endblock %}
+
+
